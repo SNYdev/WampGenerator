@@ -1,1 +1,2 @@
 # WampGenerator
+## Utilisation
