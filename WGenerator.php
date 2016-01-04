@@ -3,7 +3,6 @@
 $condition = $argv[1];
 $filename = $argv[2];
 
-// Si la condition est vitrine
 if ($condition == "default") {
   $folders = [
     'js'=> [
@@ -33,7 +32,6 @@ if ($condition == "default") {
   $jsPath = $pathFolder."js/jquery-1.11.3.min.js";
   fopen($indexPath, "w+");
 
-  // Ecriture dans reset.css
   $resetContent = fopen($resetPath, "a");
   fwrite($resetContent, "
     html, body, div, span, applet, object, iframe,
