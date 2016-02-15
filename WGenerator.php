@@ -29,7 +29,7 @@ if ($condition == "default") {
   $indexPath = $pathFolder."index.php";
   $stylePath = $pathFolder."css/style.css";
   $resetPath = $pathFolder."css/reset.css";
-  $jsPath = $pathFolder."js/jquery-1.11.3.min.js";
+  $jsPath = $pathFolder."js/jquery-1.12.0.min.js";
   fopen($indexPath, "w+");
 
   $resetContent = fopen($resetPath, "a");
@@ -107,11 +107,13 @@ if ($condition == "default") {
   fclose($indexContent);
 
   // Ecriture dans jquery
-  $jsContent = fopen($jsPath, "a");
-  fwrite($jsContent, "
-  ");
-  fclose($jsContent);
+  $jsQuery = file_get_contents('core/jquery-1.12.0.min.js');
+  $openJS = fopen($jsPath, "a+");
+  fwrite($openJS, $jsQuery);
+  fclose($openJS);
 }
+
+// STRUCTURE MEAN
 
 elseif ($condition == "mean") {
   $folders = [
@@ -154,6 +156,7 @@ elseif ($condition == "mean") {
   $pathIndex = $pathMean."myApp/index.html";
   $pathStyle = $pathMean."myApp/css/style.css";
   $pathReset = $pathMean."myApp/css/reset.css";
+
 
   fopen($pathApp, "w+");
   fopen($pathIndex, "w+");
